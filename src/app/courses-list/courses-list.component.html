@@ -1,0 +1,17 @@
+<div class="course-page">
+  <form class="search-form">
+    <input [(ngModel)]="searchParam" [ngModelOptions]="{standalone: true}" type="text" placeholder="Type to search"/>
+    <button (click)="search()" type="submit">Search</button>
+  </form>
+
+  <button type="button" class="btn-common btn-add">
+    <i class="material-icons">add_circle_outline</i>
+    <span>Add course</span>
+  </button>
+
+  <ul class="course-list">
+    <li *ngFor="let course of allCourses">
+      <app-courses-item [course]="course" (deleteHandler)="delete($event)"></app-courses-item>
+    </li>
+  </ul>
+</div>

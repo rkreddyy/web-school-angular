@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/User';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +7,9 @@ import { User } from '../models/User';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  userLogin = 'User login';
 
-  fullName = new User('1', 'Ravi', 'Kiran').getFullName();
+  constructor() { }
 
   ngOnInit(): void {
   }
