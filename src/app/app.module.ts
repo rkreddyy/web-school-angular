@@ -1,49 +1,43 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
-import { CreateCourseComponent } from './create-course/create-course.component';
-import { EditCourseComponent } from './edit-course/edit-course.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
-import { CoursesPageComponent } from './courses-page/courses-page.component';
-import { LogoComponent } from './logo/logo.component';
 import { CoursesItemComponent } from './courses-item/courses-item.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CoursesPageComponent } from './courses-page/courses-page.component';
+import { CourseDateDirective } from './directives/course-date.directive';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { LogoComponent } from './logo/logo.component';
 import { DurationPipe } from './pipes/duration.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './pipes/filter.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent,
-    CreateCourseComponent,
-    EditCourseComponent,
-    LoginComponent,
-    LogoutComponent,
-    BreadcrumbsComponent,
-    CoursesPageComponent,
     LogoComponent,
-    CoursesItemComponent,
+    CoursesPageComponent,
+    BreadcrumbsComponent,
     CoursesListComponent,
-    DurationPipe
+    CoursesItemComponent,
+    DurationPipe,
+    CourseDateDirective,
+    OrderByPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
-    BrowserAnimationsModule
+    FormsModule
   ],
-  providers: [],
+  providers: [FilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
