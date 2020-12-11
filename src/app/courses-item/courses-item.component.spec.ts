@@ -1,6 +1,7 @@
 import { CoursesItemComponent } from './courses-item.component';
 import {Course} from '../interfaces/course';
 
+
 describe( 'CoursesItemComponent', () => {
 
   let coursesItemComponent: CoursesItemComponent;
